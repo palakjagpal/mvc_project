@@ -20,7 +20,6 @@ app.get("/", (req, res) => {
     res.render("home") //rendering the home.pug file when the user navigates to the root route
 });
 
-
 app.listen( PORT || 5000, ()=>{
     console.log(`Server running in http://localhost:${PORT}`)
 })
