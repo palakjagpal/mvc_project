@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 
-const app = express()
+dotenv.config() //loading environment variables from .env file
 
-const PORT = 3000
+const app = express()
 
 app.set("view engine", "pug")//setting pug as the view engine
 app.set("views", "./views") //setting the views directory
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
     res.render("home") //rendering the home.pug file when the user navigates to the root route
 });
 
-app.listen( PORT || 5000, ()=>{
-    console.log(`Server running in http://localhost:${PORT}`)
+app.listen( process.env.PORT || 5000, ()=>{
+    console.log(`Server running in http://localhost:${process.env.PORT || 5000}`)
 })
 
